@@ -58,9 +58,9 @@ while True:
 		new_city={
 			"id": new_id,
 			"name": new_name,
-			"country ": new_country,
+			"country": new_country,
 			"is_big": new_is_big,
-			"people_count ": new_people_count
+			"people_count": new_people_count
 		}
 
 		with open('city.json', 'r+', encoding='utf-8') as file:
@@ -71,3 +71,36 @@ while True:
 
 		count+=1
 
+	elif  res =="4":
+
+		deletе = input("Введите номер записи которую вы хотите удалить: ")
+
+		with open('city.json', 'r+', encoding='utf-8') as file:
+			data = json.load(file)
+			found = False
+
+			for city in data:
+				if city['id'] == deletе:
+					data.remove(city)
+					found = True
+					break
+
+			if not found:
+
+				print("\n=============== Не найдено ===============")
+		
+			else:
+
+				file.seek(0)
+				file.truncate()
+				json.dump(data, file, ensure_ascii=False, indent=4)
+
+			count+=1 
+           
+	elif res =="5":
+
+		print(f"\nВсего выполненных операций с записями: {count}")
+		break
+
+	else:
+		print("Неправильный ввод, попробуйте снова.")

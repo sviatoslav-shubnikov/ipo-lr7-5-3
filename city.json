@@ -1,37 +1,37 @@
 [
-	{
-		"id": "1",
-		"name": "Minsk",
-		"country ": "Belarus",
-		"is_big": true,
-		"people_count ": 2000000
-	},
-	{
-		"id": "2",
-		"name": "Slonim",
-		"country ": "Belarus",
-		"is_big": false,
-		"people_count ": 49334
-	},
-	{
-		"id": "3",
-		"name": "Jlobin",
-		"country ": "Belarus",
-		"is_big": false,
-		"people_count ": 75700
-	},
-	{
-		"id": "4",
-		"name": "Warsaw",
-		"country ": "Poland",
-		"is_big": true,
-		"people_count ": 1777972
-	},
-	{
-		"id": "5",
-		"name": "Moscow",
-		"country ": "Russia",
-		"is_big": true,
-		"people_count ": 13149803
-	}
+    {
+        "id": "1",
+        "name": "Minsk",
+        "country": "Belarus",
+        "is_big": true,
+        "people_count": 2000000
+    },
+    {
+        "id": "2",
+        "name": "Slonim",
+        "country": "Belarus",
+        "is_big": false,
+        "people_count": 49334
+    },
+    {
+        "id": "3",
+        "name": "Jlobin",
+        "country": "Belarus",
+        "is_big": false,
+        "people_count": 75700
+    },
+    {
+        "id": "4",
+        "name": "Warsaw",
+        "country": "Poland",
+        "is_big": true,
+        "people_count": 1777972
+    },
+    {
+        "id": "5",
+        "name": "Moscow",
+        "country": "Russia",
+        "is_big": true,
+        "people_count": 13149803
+    }
 ]
