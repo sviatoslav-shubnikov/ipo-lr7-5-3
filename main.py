@@ -95,7 +95,7 @@ while True:
 				file.truncate()
 				json.dump(data, file, ensure_ascii=False, indent=4)
 
-			count+=1 
+		count+=1 
            
 	elif res =="5":
 
