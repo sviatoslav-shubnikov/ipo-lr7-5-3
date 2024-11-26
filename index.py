@@ -55,12 +55,23 @@ def post():
 		"is_big": new_is_big,
 		"people_count": new_people_count
 	}
-
+	
 	with open('city.json', 'r+', encoding='utf-8') as file:
+		count = 0
 		data = json.load(file)
 		data.append(new_city)
-		file.seek(0)
-		json.dump(data, file, ensure_ascii=False, indent=4)
+		
+		for city in data:
+
+			if city['id'] == new_id:
+
+				count +=1
+
+		if count == 0:
+			file.seek(0)
+			json.dump(data, file, ensure_ascii=False, indent=4)
+		else:
+			print ("Такой Id уже занят")
 
 
 def delete():

@@ -33,33 +33,5 @@
         "country": "Russia",
         "is_big": true,
         "people_count": 13149803
-    },
-    {
-        "id": "3",
-        "name": "fsjdfn",
-        "country": "fsdfuhsd",
-        "is_big": false,
-        "people_count": 525252
-    },
-    {
-        "id": "3",
-        "name": "551531",
-        "country": "515",
-        "is_big": false,
-        "people_count": 5115
-    },
-    {
-        "id": "3",
-        "name": "sdkfb",
-        "country": "sdfhjdsf",
-        "is_big": false,
-        "people_count": 52525252
-    },
-    {
-        "id": "3",
-        "name": "sdkfb",
-        "country": "sdfhjdsf",
-        "is_big": false,
-        "people_count": 52525252
     }
 ]
