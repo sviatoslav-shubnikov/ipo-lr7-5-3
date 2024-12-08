@@ -42,36 +42,42 @@ def get_by_id():
 
 def post():
 
-	new_id = input("Введите номер записи: \n")
-	new_name = input("Введите название города: \n")
-	new_country = input("Введите страны города: \n")
-	new_is_big = input("Введите является ли большим(>100k)(True/False): \n")=="True"
-	new_people_count = int(input("Введите численность населения города: \n"))
-
-	new_city={
-		"id": new_id,
-		"name": new_name,
-		"country": new_country,
-		"is_big": new_is_big,
-		"people_count": new_people_count
-	}
+	
 	
 	with open('city.json', 'r+', encoding='utf-8') as file:
-		count = 0
+
 		data = json.load(file)
+
+		if not data:
+			new_id = 1
+		else:
+			
+			new_id = max(int(city['id']) for city in data) + 1
+	
+		new_name = input("Введите название города: \n")
+		new_country = input("Введите страны города: \n")
+		new_is_big = input("Введите является ли большим(>100k)(True/False): \n")=="True"
+		new_people_count = int(input("Введите численность населения города: \n"))
+
+		new_city={
+			"id": str(new_id),
+			"name": new_name,
+			"country": new_country,
+			"is_big": new_is_big,
+			"people_count": new_people_count
+		}
+
+		
 		data.append(new_city)
 		
-		for city in data:
+		
+		file.seek(0)
+		json.dump(data, file, ensure_ascii=False, indent=4)
+		file.truncate()
 
-			if city['id'] == new_id:
+	print("Запись добавлена!")
 
-				count +=1
-
-		if count == 0:
-			file.seek(0)
-			json.dump(data, file, ensure_ascii=False, indent=4)
-		else:
-			print ("Такой Id уже занят")
+		
 
 
 def delete():
@@ -95,8 +101,10 @@ def delete():
 		else:
 
 			file.seek(0)
-			file.truncate()
 			json.dump(data, file, ensure_ascii=False, indent=4)
+			file.truncate()
+
+			print(f"Запись с {deletе} id удалена!")
 
 
 def main():
